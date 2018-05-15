@@ -1,0 +1,111 @@
+<!--
+Credit to generic.sucks for the website code.
+Images belong to their respective owners.
+More info can be found at /credit/.
+
+Source: https://github.com/Purpzie/sucks
+Generic.sucks source: https://github.com/memework/generic-sucks
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>wop wop</title>
+
+    
+   
+    
+    
+    
+    
+  <!-- open graph -->
+  <meta property="og:title" content="purpzie sucks">
+  <meta property="og:description" content="purpzie sucks">
+  <meta property="og:type" content="web.page">
+  <meta property="og:image" content="https://i.imgur.com/dbg8DXT.png">
+  <meta property="og:url" content="http://purpzie.github.io/sucks">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="ytplayer" style="display:none;"></div>
+
+  <script>
+    var tag = document.createElement('script');
+      
+    tag.src = 'https://www.youtube.com/player_api';
+      
+     
+      
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+    function onYouTubePlayerAPIReady() {
+      player = new YT.Player('ytplayer', {
+        height: '360', width: '640',
+        videoId: '9ZrAYxWPN6c',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.setVolume(100);
+      event.target.playVideo();
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === 0) {
+        event.target.playVideo();
+      }
+    }
+
+    setInterval(function() {
+      if (player == undefined || typeof(player.getCurrentTime) !== 'function' ||
+          hyperEnable == undefined) return;
+      var cur = player.getCurrentTime();
+      if (Math.round(cur) == 139 || Math.round(cur) === 24) {
+        hyperEnable();
+      } else if ((cur >= 100 && cur < 101) ||(cur >= 215 && cur < 216)) {
+        hyperDisable();
+      }
+    }, 1);
+  </script>
+
+  <canvas>
+  </canvas>
+
+  
+  <img id="memeplane" src="https://discordapp.com/assets/ff819634ae1a1b4b573b0110d683f7b1.svg">
+
+  <div class="text">
+    <a href="https://support.discordapp.com/hc/en-us/articles/360000291932-How-to-Properly-Report-Issues-to-Trust-Safety">
+      Click to File a Report
+      
+      </a> 
+  </div>
+  <div class="links">
+    <a href="https://github.com/purpzie/sucks">source</a>
+  </div>
+
+<!-- images used in the canvas code -->
+<div class="images">
+  <img id="img-eyes" src="https://discordapp.com/assets/ccf4c733929efd9762ab02cd65175377.svg">
+  <img id="img-cop-person" src="https://discordapp.com/assets/71b739606c8968070acbbc8b60b07d42.svg">
+  <img id="img-helicopter" src="https://discordapp.com/assets/77f150891732342bfe04a212f9cc7c3b.svg">
+<img id="img-copcar-sideways"
+     src="https://discordapp.com/assets/6c3c4f357534c6f279e4743dc120baa6.svg"> 
+  
+  <!-- All images above this line are from generic.sucks -->
+  
+  <img id="img-discord" src="images/discord.png?raw=true">
+  
+  
+</div>
+
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
